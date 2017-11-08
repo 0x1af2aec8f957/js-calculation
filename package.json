@@ -1,0 +1,26 @@
+{
+  "name": "js-accuracy",
+  "version": "1.0.0",
+  "description": "solving the problem of javaScript computing accuracy loss",
+  "main": "index.js",
+  "scripts": {
+    "example": "node example/run/example.js"
+  },
+  "keywords": [
+    "js精度",
+    "javascript精度",
+    "精度",
+    "accuracy",
+    "js-accuracy"
+  ],
+  "author": "603803799@qq.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/noteScript/accuracy/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/noteScript/js-accuracy.git"
+  },
+  "homepage": "https://github.com/noteScript/accuracy#readme"
+}
