@@ -1,5 +1,5 @@
 {
-  "name": "js-accuracy",
+  "name": "js-calculation",
   "version": "1.0.0",
   "description": "solving the problem of javaScript computing accuracy loss",
   "main": "index.js",
@@ -11,16 +11,17 @@
     "javascript精度",
     "精度",
     "accuracy",
-    "js-accuracy"
+    "js-accuracy",
+    "js-calculation"
   ],
   "author": "603803799@qq.com",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/noteScript/js-accuracy/issues"
+    "url": "https://github.com/noteScript/js-calculation/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/noteScript/js-accuracy.git"
+    "url": "https://github.com/noteScript/js-calculation.git"
   },
-  "homepage": "https://github.com/noteScript/js-accuracy/#readme"
+  "homepage": "https://github.com/noteScript/js-calculation/#readme"
 }

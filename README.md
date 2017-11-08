@@ -1,10 +1,10 @@
-> accuracy.js@1.0.0
+> calculation.js@1.0.0
 
-## install accuracy.js
+## install calculation.js
 
 ```bash
 
-npm install js-accuracy
+npm install js-calculation
 
 ```
 
@@ -14,8 +14,8 @@ npm install js-accuracy
 
 ``` bash
 
-const accuracy=require('js-accuracy');
-//import accuracy from 'js-accuracy'
+const accuracy=require('js-calculation');
+//import calculation from 'js-calculation'
 
 // division example
 
@@ -39,11 +39,11 @@ console.log(accuracy.subtraction(0.1,0.1));
 
 ``` bash
 
-<script src="~/accuracy/index.js">
+<script src="~/calculation/index.js">
 // to do ...
 // adopt window.accuracy use
 </script>
 
 ```
 
-[accuracy.js@1.0.0](https://github.com/noteScript/js-accuracy.git)
+[calculation.js@1.0.0](https://github.com/noteScript/js-calculation.git)

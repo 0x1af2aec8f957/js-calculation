@@ -1,5 +1,5 @@
 /*!
- * accuracy.js v1.0.0
+ * calculation.js v1.0.0
  * 2017 603803799@qq.com
  * Released under the MIT License.
  */
@@ -70,4 +70,4 @@
     }
 });
 
-//github.com => https://github.com/noteScript/js-accuracy.git
+//github.com => https://github.com/noteScript/js-calculation.git
