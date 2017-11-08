@@ -1,5 +1,5 @@
 const accuracy=require('../../index');
-//import accuracy from 'js-accuracy'
+//import accuracy from '../../index'
 
 // division example
 
