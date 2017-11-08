@@ -1,5 +1,9 @@
 > calculation.js@1.0.0
 
+##### matters needing attention
+
+Due to release errors, js-accuracy is changed to js-calculation from now on！
+
 ## install calculation.js
 
 ```bash
@@ -8,7 +12,7 @@ npm install js-calculation
 
 ```
 
-## use accuracy.js
+## use calculation.js
 
 > node import
 
