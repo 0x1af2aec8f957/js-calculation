@@ -16,11 +16,11 @@
   "author": "603803799@qq.com",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/noteScript/accuracy/issues"
+    "url": "https://github.com/noteScript/js-accuracy/issues"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/noteScript/js-accuracy.git"
   },
-  "homepage": "https://github.com/noteScript/accuracy#readme"
+  "homepage": "https://github.com/noteScript/js-accuracy/#readme"
 }
