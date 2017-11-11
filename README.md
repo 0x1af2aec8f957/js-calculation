@@ -50,4 +50,8 @@ console.log(accuracy.subtraction(0.1,0.1));
 
 ```
 
+##  License
+
+[MIT](http://opensource.org/licenses/MIT)
+
 [calculation.js@1.0.0](https://github.com/noteScript/js-calculation.git)
