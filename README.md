@@ -19,7 +19,7 @@ npm install js-calculation
 ``` bash
 
 const accuracy=require('js-calculation');
-//import calculation from 'js-calculation'
+//import accuracy from 'js-calculation'
 
 // division example
 
