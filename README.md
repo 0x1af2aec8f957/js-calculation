@@ -45,7 +45,7 @@ console.log(accuracy.subtraction(0.1,0.1));
 
 <script src="~/calculation/index.js">
 // to do ...
-// adopt window.accuracy use
+// adopt window.calculation use
 </script>
 
 ```
