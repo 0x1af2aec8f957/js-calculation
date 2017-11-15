@@ -5,7 +5,7 @@
  */
 (function (global, factory) {
     typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
-        typeof define === 'function' && define.amd ? define(factory) : (global.accuracy = factory());
+        typeof define === 'function' && define.amd ? define(factory) : (global.calculation = factory());
 })(this, function () {
     return {
         division(arg1, arg2) { //除法
