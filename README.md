@@ -4,6 +4,8 @@
 
 Due to release errors, js-accuracy is changed to js-calculation from now on！
 
+This only applies to small projects, and if you're building a large project, recommend that you use [math.js](https://github.com/josdejong/mathjs) to meet your needs!
+
 ## install calculation.js
 
 ```bash
