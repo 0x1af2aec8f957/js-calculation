@@ -1,4 +1,4 @@
-> calculation.js@1.0.0
+> calculation.js@1.0.1
 
 ##### matters needing attention
 
@@ -56,4 +56,4 @@ console.log(accuracy.subtraction(0.1,0.1));
 
 [MIT](http://opensource.org/licenses/MIT)
 
-[calculation.js@1.0.0](https://github.com/noteScript/js-calculation.git)
+[calculation.js@1.0.1](https://github.com/noteScript/js-calculation.git)
