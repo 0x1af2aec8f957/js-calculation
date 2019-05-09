@@ -1,6 +1,6 @@
 {
   "name": "js-calculation",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "solving the problem of javaScript computing accuracy loss",
   "main": "index.js",
   "scripts": {
