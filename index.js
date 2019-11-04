@@ -1,10 +1,10 @@
 /*!
- * calculation.js v2.0.1
+ * calculation.js v2.0.2
  * 2017 603803799@qq.com
  * Released under the MIT License.
  */
 
-const IS_NUMBER = /^\-?\d*\.?\d?$/;
+const IS_NUMBER = /^\-?\d*\.?\d*$/;
 const CONS_NUMBER = ['E', 'LN2', 'LN10', 'LOG2E', 'LOG10E', 'PI', 'SQRT1_2', 'SQRT2'];
 
 export const calc = {
@@ -70,7 +70,7 @@ export default str => {
     return str.split(' ').reduce((acc, cur) => {
         switch (true) {
             case OPERATORS.includes(cur):
-                acc.push(calc[cur](acc.pop(), acc.pop()));
+                acc.push(calc[cur](...[acc.pop(), acc.pop()].reverse()));
                 break;
             case IS_NUMBER.test(cur):
                 acc.push(cur);
