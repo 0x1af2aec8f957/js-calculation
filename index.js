@@ -1,27 +1,28 @@
 /*!
- * calculation.js v2.0.2
+ * calculation.js v2.0.3
  * 2017 603803799@qq.com
  * Released under the MIT License.
  */
 
-const IS_NUMBER = /^\-?\d*\.?\d*$/;
+const IS_NUMBER = /^\-?\d*\.?\d*$/; // 注意当前版本不支持直接传入科学计数法的计算，但在框架运行时计算产生的科学计数法是可以被正常处理的
 const CONS_NUMBER = ['E', 'LN2', 'LN10', 'LOG2E', 'LOG10E', 'PI', 'SQRT1_2', 'SQRT2'];
 
 export const calc = {
     '/': function (arg1, arg2) { // 除法
         const t1 = String(arg1).split('.')[1] ? String(arg1).split('.')[1].length : 0;
         const t2 = String(arg2).split('.')[1] ? String(arg2).split('.')[1].length : 0;
-        const r1 = Number(String(arg1).replace('.', ''));
-        const r2 = Number(String(arg2).replace('.', ''));
+        const result = (Number(arg1) * (10 ** t1)) / (Number(arg2) * (10 ** t2));
 
-        return this['*']((r1 / r2), 10 ** (t2 - t1));
+        return this['*'](result, 10 ** (t2 - t1));
     },
     '*': function (arg1, arg2) { // 乘法
         const s1 = String(arg1);
         const s2 = String(arg2);
         let m = s1.split('.')[1] ? s1.split('.')[1].length : 0;
         m += s2.split('.')[1] ? s2.split('.')[1].length : 0;
-        return Number(s1.replace('.', '')) * Number(s2.replace('.', '')) / (10 ** m);
+        const result = (Number(arg1) * Number(arg2)).toFixed(m + 1).substring(0, m);
+
+        return Number(result);
     },
     '+': function (arg1, arg2) { // 加法
         const r1 = String(arg1).split('.')[1] ? String(arg1).split('.')[1].length : 0;
@@ -36,7 +37,7 @@ export const calc = {
         const m = 10 * Math.max(r1, r2);
         const n = (r1 >= r2) ? r1 : r2;
 
-        return Number(((arg1 * m - arg2 * m) / m).toFixed(n));
+        return Number(((arg1 * m - arg2 * m) / m).toFixed(n + 1).substring(0, n));
     },
     '%': function (arg1, arg2) { // 余数
         const r1 = String(arg1).split('.')[1] ? String(arg1).split('.')[1].length : 0;
