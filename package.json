@@ -1,6 +1,6 @@
 {
   "name": "js-calculation",
-  "version": "2.0.3",
+  "version": "2.0.4",
   "description": "solving the problem of javaScript computing accuracy loss",
   "main": "index.js",
   "scripts": {
@@ -23,5 +23,8 @@
     "type": "git",
     "url": "https://github.com/noteScript/js-calculation.git"
   },
-  "homepage": "https://github.com/noteScript/js-calculation/#readme"
+  "homepage": "https://github.com/noteScript/js-calculation/#readme",
+  "dependencies": {
+    "mathjs": "^6.6.1"
+  }
 }

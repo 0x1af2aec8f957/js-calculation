@@ -1,4 +1,4 @@
-> calculation.js@2.0.3
+> calculation.js@2.0.4
 
 ##### matters needing attention
 
@@ -37,4 +37,4 @@ calc('0.1 0.1 * 0.1 - 0.1 0.1 * +') // -0.08
 
 [MIT](http://opensource.org/licenses/MIT)
 
-[calculation.js@2.0.3](https://github.com/noteScript/js-calculation.git)
+[calculation.js@2.0.4](https://github.com/noteScript/js-calculation.git)
