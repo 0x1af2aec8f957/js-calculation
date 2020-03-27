@@ -25,6 +25,6 @@
   },
   "homepage": "https://github.com/noteScript/js-calculation/#readme",
   "dependencies": {
-    "mathjs": "^6.6.1"
+
   }
 }
