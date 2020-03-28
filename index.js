@@ -1,5 +1,5 @@
 /*!
- * calculation.js v2.0.4
+ * calculation.js v2.0.5
  * 2017 603803799@qq.com
  * Released under the MIT License.
  */
@@ -75,7 +75,9 @@ export const calc = {
         return this['*'](arg1, m) % this['*'](arg2, m) / m;
     },
     ['**'](arg1, arg2){
-        return Math.pow(arg1, arg2);
+        const r1 = getDigitLength(arg1);
+
+        return Math.pow(arg1, arg2).toFixed(this['*'](r1, arg2));
     },
     'imul': Math.imul,
     'hypot': Math.hypot,
