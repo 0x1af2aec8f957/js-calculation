@@ -18,7 +18,7 @@ const getDigitLength = (arg1) => {
             return '+++calculation.js+++';
         });
         return _digit;
-    })(arg1Str.replace(/^\-?\d*\./i, ''));
+    })(arg1Str.replace(/^\-?\d*\.?/i, ''));
 };
 
 export const calc = {
