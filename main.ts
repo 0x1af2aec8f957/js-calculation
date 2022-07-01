@@ -3,10 +3,10 @@
  * 2017 603803799@qq.com
  * Released under the MIT License.
  */
-export { config } from 'mathjs';
+export { config } from 'https://esm.sh/mathjs';
 
-import { computedPrefix, computedInfix, computedPostfix } from './src/parse';
-import { isOperator } from './src/utils';
+import { computedPrefix, computedInfix, computedPostfix } from './src/parse.ts';
+import { isOperator } from './src/utils.ts';
 // config({
 //     number: 'BigNumber',
 //     precision: 64

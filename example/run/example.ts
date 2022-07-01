@@ -1,4 +1,4 @@
-import accuracy from '../../main';
+import accuracy from '../../main.ts';
 
 console.log(accuracy('0.1 0.1 *'));
 
