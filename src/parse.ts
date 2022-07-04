@@ -25,8 +25,9 @@ export function computedPrefix(expr: string | string[]): BigNumber | undefined {
 
         if (isFunction(node)) { // 方法计算
             const paramsLength = (Math[node as keyof Math] as Function).length;
-            _nodes.push((bignumber(Math[node as keyof Math] as any)(
+            _nodes.push(bignumber((Math[node as keyof Math] as Function)(
                 ...new Array(paramsLength)
+                .fill(undefined)
                 .map((_, _index) => _nodes[index + _index + 1])
             )));
 
@@ -38,6 +39,7 @@ export function computedPrefix(expr: string | string[]): BigNumber | undefined {
             const paramsLength = OPERATOR[node as keyof typeof OPERATOR].length;
             _nodes.push(bignumber((OPERATOR[node as keyof typeof OPERATOR] as Function)(
                 ...new Array(paramsLength)
+                .fill(undefined)
                 .map((_, _index) => _nodes[index + _index + 1])
             )));
 
@@ -71,6 +73,7 @@ export function computedPostfix(expr: string | string[]): BigNumber | undefined 
         if (isFunction(node)) { // 方法计算
             _nodes.push(bignumber((Math[node as keyof Math] as Function)(
                 ...new Array((Math[node as keyof Math] as Function).length)
+                .fill(undefined)
                 .map(_nodes.pop)
                 .reverse()
             )));
@@ -79,6 +82,7 @@ export function computedPostfix(expr: string | string[]): BigNumber | undefined 
         if (isOperator(node)) { // 运算符计算
             _nodes.push(bignumber((OPERATOR[node as keyof typeof OPERATOR] as Function)(
                 ...new Array(OPERATOR[node as keyof typeof OPERATOR].length)
+                .fill(undefined)
                 .map(_nodes.pop)
                 .reverse()
             )));
