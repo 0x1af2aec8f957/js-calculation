@@ -12,13 +12,13 @@ import { isOperator } from './src/utils.ts';
 //     precision: 64
 // });
 
-export default (str: string): number | undefined => {
+export default (str: string): number => {
     const isPrefixNotation = isOperator(str[0]);
     // const isInfixNotation: boolean;
     const isPostfixNotation = isOperator(str[str.length - 1]);
 
-    if (isPrefixNotation) return computedPrefix(str)?.toNumber();
-    if (isPostfixNotation) return computedPostfix(str)?.toNumber();
+    if (isPrefixNotation) return computedPrefix(str).toNumber();
+    if (isPostfixNotation) return computedPostfix(str).toNumber();
 
     return computedInfix(str);
 };

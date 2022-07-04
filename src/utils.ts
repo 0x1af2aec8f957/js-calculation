@@ -26,8 +26,7 @@ export function isOperator(token: string){ // 是否是运算符
 
 export function isNumber(token: string, hasConstant: boolean = true){ // 是否是数字
     // return isFinite(token as unknown as number);
-    return hasNumericValue(token) ||
-    (hasConstant ? isConstantNumber(token) : false);
+    return hasNumericValue(token) || (hasConstant && isConstantNumber(token));
 }
 
 export function isTreeNode(obj: Object){ // 是否是ast-tree

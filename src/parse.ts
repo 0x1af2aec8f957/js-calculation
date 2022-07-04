@@ -1,11 +1,11 @@
-import type { BigNumber, MathCollection } from 'https://esm.sh/mathjs';
+import type { BigNumber } from 'https://esm.sh/mathjs';
 
 import { bignumber, evaluate } from 'https://esm.sh/mathjs';
 
 import { isNumber, isConstantNumber, isOperator, isFunction, OPERATOR } from './utils.ts';
 
-export function computedPrefix(expr: string | string[]): BigNumber | undefined { // 前缀表达式
-    const nodes = typeof expr === 'string' ? expr.split(/\S+/) : expr; // 表达式节点
+export function computedPrefix(expr: string | string[]) { // 前缀表达式
+    const nodes = typeof expr === 'string' ? expr.split(/\s+/) : expr; // 表达式节点
     const _nodes: BigNumber[] = [];
 
     for (let index = 0; index < nodes.length;){
@@ -28,7 +28,7 @@ export function computedPrefix(expr: string | string[]): BigNumber | undefined {
             _nodes.push(bignumber((Math[node as keyof Math] as Function)(
                 ...new Array(paramsLength)
                 .fill(undefined)
-                .map((_, _index) => _nodes[index + _index + 1])
+                .map((_, _index) => nodes[index + _index + 1])
             )));
 
             index += paramsLength;
@@ -40,7 +40,7 @@ export function computedPrefix(expr: string | string[]): BigNumber | undefined {
             _nodes.push(bignumber((OPERATOR[node as keyof typeof OPERATOR] as Function)(
                 ...new Array(paramsLength)
                 .fill(undefined)
-                .map((_, _index) => _nodes[index + _index + 1])
+                .map((_, _index) => nodes[index + _index + 1])
             )));
 
             index += paramsLength;
@@ -50,7 +50,7 @@ export function computedPrefix(expr: string | string[]): BigNumber | undefined {
         index += 1;
     }
 
-    return _nodes.pop();
+    return _nodes.pop() as BigNumber;
 }
 
 export function computedInfix(expr: string | string[]): number { // 中缀表达式
@@ -58,36 +58,40 @@ export function computedInfix(expr: string | string[]): number { // 中缀表达
     return evaluate(_expr);
 }
 
-export function computedPostfix(expr: string | string[]): BigNumber | undefined { // 后缀表达式
-    const nodes = typeof expr === 'string' ? expr.split(/\S+/) : expr; // 表达式节点
+export function computedPostfix(expr: string | string[]) { // 后缀表达式
+    const nodes = typeof expr === 'string' ? expr.split(/\s+/) : expr; // 表达式节点
 
     return nodes.reduce<BigNumber[]>((_nodes, node) => { // 数字存储
-        if (isNumber(node, false)) {
-            _nodes.push(bignumber(node));
-        }
-
         if (isConstantNumber(node)) { // 常量存储为数字
             _nodes.push(bignumber(Math[node as keyof Math] as number));
+            return _nodes;
         }
 
         if (isFunction(node)) { // 方法计算
             _nodes.push(bignumber((Math[node as keyof Math] as Function)(
                 ...new Array((Math[node as keyof Math] as Function).length)
                 .fill(undefined)
-                .map(_nodes.pop)
+                .map(() => _nodes.pop() as BigNumber)
                 .reverse()
             )));
+            return _nodes;
         }
 
         if (isOperator(node)) { // 运算符计算
             _nodes.push(bignumber((OPERATOR[node as keyof typeof OPERATOR] as Function)(
                 ...new Array(OPERATOR[node as keyof typeof OPERATOR].length)
                 .fill(undefined)
-                .map(_nodes.pop)
+                .map(() => _nodes.pop() as BigNumber)
                 .reverse()
             )));
+            return _nodes;
+        }
+
+        if (isNumber(node, false)) {
+            _nodes.push(bignumber(node));
         }
 
         return _nodes;
-    }, []).shift();
+
+    }, []).shift() as BigNumber;
 };
