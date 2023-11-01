@@ -1,5 +1,5 @@
 {
-  "name": "js-calculation",
+  "name": "@0x1af2aec8f957/js-calculation",
   "version": "2.0.7",
   "description": "solving the problem of javaScript computing accuracy loss",
   "main": "index.js",
