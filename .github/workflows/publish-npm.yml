@@ -14,6 +14,7 @@ jobs:
         with:
           node-version: 'latest'
           registry-url: 'https://registry.npmjs.org'
+      - run: ed 's/@${{ github.actor }}\///g' ./package.json # 针对非 npm 私有包，需要删除 scope
       - run: npm install --package-lock-only
       - run: npm ci
       - run: npm publish
