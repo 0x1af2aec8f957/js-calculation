@@ -21,6 +21,6 @@ jobs:
           # scope: '@octocat'
       - run: npm install --package-lock-only
       - run: npm ci
-      - run: npm publish
+      - run: npm publish --registry=https://npm.pkg.github.com # 不添加 registry 会发布到: https://registry.npmjs.org, 参考: https://stackoverflow.com/a/66037808
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
