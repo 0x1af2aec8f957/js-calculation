@@ -1,9 +1,9 @@
 /*!
- * calculation.js v2.0.6
- * 2017 603803799@qq.com
+ * calculation.js v2.0.7
+ * 2017 0x23fd5097@gmail.com
  * Released under the MIT License.
  */
-export { config } from 'https://esm.sh/mathjs';
+// export { config } from 'https://esm.sh/mathjs';
 
 import { computedPrefix, computedInfix, computedPostfix } from './src/parse.ts';
 import { isOperator } from './src/utils.ts';

@@ -1,10 +1,10 @@
 {
   "name": "js-calculation",
-  "version": "2.0.6",
+  "version": "2.0.7",
   "description": "solving the problem of javaScript computing accuracy loss",
   "main": "index.js",
   "scripts": {
-    "example": "node example/run/example.js"
+    "example": "ts-node example/run/example.ts"
   },
   "keywords": [
     "js精度",
@@ -14,17 +14,20 @@
     "js-accuracy",
     "js-calculation"
   ],
-  "author": "603803799@qq.com",
+  "author": "0x23fd5097@gmail.com",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/noteScript/js-calculation/issues"
+    "url": "https://github.com/0x1af2aec8f957/js-calculation/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/noteScript/js-calculation.git"
+    "url": "https://github.com/0x1af2aec8f957/js-calculation.git"
   },
-  "homepage": "https://github.com/noteScript/js-calculation/#readme",
+  "homepage": "https://github.com/0x1af2aec8f957/js-calculation/#readme",
   "dependencies": {
-    "mathjs": "^10.6.4"
+    "mathjs": "^12.0.0"
+  },
+  "devDependencies": {
+    "@tsconfig/node-lts": "^18.12.5"
   }
 }
