@@ -18,7 +18,8 @@ jobs:
           node-version: 'latest'
           registry-url: 'https://npm.pkg.github.com'
           # Defaults to the user or organization that owns the workflow file
-          # scope: '@octocat'
+          # scope: '@${{ github.repository_owner }}'
+      - run: echo "`jq -r '.name="@${{ github.repository }}"' package.json`" > package.json # npm.pkg.github.com 要求 package.json 中的 name 字段必须存在作用域且格式为: @scope/package-name
       - run: npm install --package-lock-only
       - run: npm ci
       - run: npm publish --registry=https://npm.pkg.github.com # 不添加 registry 会发布到: https://registry.npmjs.org, 参考: https://stackoverflow.com/a/66037808
