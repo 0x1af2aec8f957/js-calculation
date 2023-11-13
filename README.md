@@ -1,4 +1,4 @@
-> calculation.js@2.0.7
+![npm](https://img.shields.io/npm/v/js-calculation)
 
 ##### matters needing attention
 
